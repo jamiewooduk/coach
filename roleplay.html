@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambr AI Coaching Demo - Investor Roleplay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .instructions h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .instructions ul {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
+        <h1>Ambr AI Coaching Demo: Investor Roleplay</h1>
+        <p>Practice a conversation with an investor using our AI coach, Ambr. Click the voice widget button in the bottom-right corner to start your roleplay session!</p>
+        
+        <div class="instructions">
+            <h2>Scenario Instructions:</h2>
+            <ul>
+                <li>You are a startup founder who has received investment from Marc VC fund.</li>
+                <li>The AI will roleplay as Ben, an investor from Marc VC, asking for a progress update.</li>
+                <li>Be prepared to discuss your startup's progress, challenges, and future plans.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var vapiInstance = null;
+        const assistant = "35947e59-0efc-4e04-9d88-b216e5934ef6";
+        const apiKey = "1c16ffea-c397-4479-b065-df8d9f3c0a89";
+        const buttonConfig = {
+            position: "bottom-right",
+            offset: "40px",
+            width: "50px",
+            height: "50px",
+            idle: {
+                color: `rgb(93, 254, 202)`,
+                type: "pill",
+                title: "Start Investor Roleplay",
+                subtitle: "Practice with Ben from Marc VC",
+                icon: `https://unpkg.com/lucide-static@0.321.0/icons/message-circle.svg`,
+            },
+            loading: {
+                color: `rgb(93, 124, 202)`,
+                type: "pill",
+                title: "Connecting...",
+                subtitle: "Please wait",
+                icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
+            },
+            active: {
+                color: `rgb(255, 0, 0)`,
+                type: "pill",
+                title: "Roleplay in progress",
+                subtitle: "Click to end session",
+                icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
+            },
+        };
+
+        (function (d, t) {
+            var g = document.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.src =
+                "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+
+            g.onload = function () {
+                vapiInstance = window.vapiSDK.run({
+                    apiKey: apiKey,
+                    assistant: assistant,
+                    config: buttonConfig,
+                });
+            };
+        })(document, "script");
+    </script>
+</body>
+</html>
