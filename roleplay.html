@@ -10,23 +10,26 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             background-color: #f5f5f5;
             color: #333;
+            display: flex;
+            flex-direction: column;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100%;
             box-sizing: border-box;
         }
         .content {
             width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         .logo {
             text-align: center;
@@ -35,29 +38,45 @@
         .logo img {
             max-width: 200px;
         }
-        .instructions {
+        .intro-instructions {
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border: 2px solid #91d5ff;
+        }
+        .scenario {
             background-color: white;
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-        .instructions h2 {
+        .intro-instructions h2, .scenario h2 {
             margin-top: 0;
             color: #FF6B00;
         }
-        .instructions ul {
+        .intro-instructions h2 {
+            display: flex;
+            align-items: center;
+        }
+        .intro-instructions h2::before {
+            content: '👋';
+            margin-right: 10px;
+        }
+        .intro-instructions ol, .scenario ul {
             padding-left: 20px;
             margin-bottom: 0;
         }
-        .instructions li {
+        .intro-instructions li, .scenario li {
             margin-bottom: 10px;
         }
         #vapi-button {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            height: 50px;
+            margin-top: auto;
+            padding: 20px 0;
         }
     </style>
 </head>
@@ -68,7 +87,22 @@
                 <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
             </div>
             
-            <div class="instructions">
+            <div class="intro-instructions">
+                <h2>Welcome to Our Prototype Test!</h2>
+                <p>Thank you for participating in testing our prototype. Your feedback is invaluable in helping us improve this concept.</p>
+                <p><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
+                <h3>How to Complete This Task:</h3>
+                <ol>
+                    <li>Read the scenario details below.</li>
+                    <li>Click the "Start Roleplay" button at the bottom of the page to begin the conversation.</li>
+                    <li>Practice the scenario by interacting with the AI.</li>
+                    <li>When finished, end the conversation.</li>
+                    <li>Return to the Google Form to provide your feedback.</li>
+                </ol>
+                <p>We appreciate your time and input. Let's get started!</p>
+            </div>
+
+            <div class="scenario">
                 <h2>Performance Conversation Roleplay Scenario:</h2>
                 <ul>
                     <li>You are a manager conducting a performance conversation with your direct report, Joe.</li>
@@ -76,9 +110,9 @@
                     <li>Your goal is to provide constructive feedback and discuss ways to improve performance.</li>
                 </ul>
             </div>
-
-            <div id="vapi-button"></div>
         </div>
+
+        <div id="vapi-button"></div>
     </div>
 
     <script>
