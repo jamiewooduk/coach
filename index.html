@@ -3,104 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambr AI Coaching Demo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Ambr Roleplay Demo - Difficult Performance Conversation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        body, html {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 0;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
             box-sizing: border-box;
         }
         .content {
-            text-align: center;
-            padding: 40px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
             width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        img {
+        .logo img {
             max-width: 200px;
-            margin-bottom: 30px;
         }
-        p {
-            color: #666;
-            line-height: 1.6;
+        .intro-instructions, .how-to, .scenario {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-        .instructions {
-            text-align: left;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
+        .intro-instructions {
+            background-color: #e6f7ff;
+            border: 2px solid #91d5ff;
         }
-        .instructions h2 {
-            color: #333;
+        .intro-instructions h2, .how-to h2, .scenario h2 {
             margin-top: 0;
+            color: #FF6B00;
         }
-        .instructions ul {
+        .intro-instructions h2 {
+            display: flex;
+            align-items: center;
+        }
+        .intro-instructions h2::before {
+            content: '👋';
+            margin-right: 10px;
+        }
+        .intro-instructions ol, .how-to ol, .scenario ul {
             padding-left: 20px;
+            margin-bottom: 0;
         }
-        .instructions li {
+        .intro-instructions li, .how-to li, .scenario li {
             margin-bottom: 10px;
+        }
+        #vapi-button {
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            padding: 20px 0;
+        }
+        .contact-info {
+            font-style: italic;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
-        <h1>Welcome to the Ambr AI Coaching Demo</h1>
-        <p>Experience personalized executive coaching with our AI coach, Ambr. Click the voice widget button in the bottom-right corner to start your coaching session!</p>
-        
-        <div class="instructions">
-            <h2>How to Use Ambr:</h2>
-            <ul>
-                <li>Start by describing a work scenario you need help with.</li>
-                <li>Ambr may ask you clarifying questions to understand your situation better.</li>
-                <li>You can request advice or engage in a role-play exercise.</li>
-            </ul>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
+            </div>
+            
+            <div class="intro-instructions">
+                <h2>Welcome to Our Prototype Test!</h2>
+                <p>Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept.</p>
+                <p class="contact-info">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
+                <p><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
+            </div>
+
+            <div class="how-to">
+                <h2>How to Complete This Task:</h2>
+                <ol>
+                    <li>Read the scenario details below.</li>
+                    <li>Click the "Start Roleplay" button at the bottom of the page to begin the conversation. You may need to grant microphone access.</li>
+                    <li>The prototype is hosted on our CTO Jamie's GitHub (Microsoft's Developer platform), which is the microphone access request you'll receive when you start the Roleplay.</li>
+                    <li>The AI will say "Hey There" to start the conversation - you should then reply using your voice and simulate the conversation based on the topic of the Roleplay scenario below.</li>
+                    <li>Practice the scenario by interacting with the AI.</li>
+                    <li>When finished, end the conversation.</li>
+                    <li>Go to the <a href="https://forms.gle/vZV5y3XgoKVnyiF29">Google Form</a> to provide your feedback.</li>
+                </ol>
+                <p>We appreciate your time and input. Let's get started!</p>
+            </div>
+
+            <div class="scenario">
+                <h2>Roleplay Scenario: Difficult Conversations</h2>
+                <ul>
+                    <li>You are a manager who has set up a meeting with your direct report, Joe.</li>
+                    <li>Joe has been struggling with time management and meeting deadlines.</li>
+                    <li>Your goal is to use the meeting to provide constructive feedback and discuss ways to improve performance.</li>
+                </ul>
+            </div>
         </div>
+
+        <div id="vapi-button"></div>
     </div>
 
     <script>
         var vapiInstance = null;
-        const assistant = "d4898442-abb7-48be-b742-f31f818c625b";
+        const assistant = "e917efb3-79a7-4c89-a8c1-d283ace25072";
         const apiKey = "1c16ffea-c397-4479-b065-df8d9f3c0a89";
         const buttonConfig = {
-            position: "bottom-right",
-            offset: "40px",
-            width: "50px",
+            width: "200px",
             height: "50px",
             idle: {
-                color: `rgb(93, 254, 202)`,
+                color: `rgb(255, 107, 0)`,
                 type: "pill",
-                title: "Need coaching?",
-                subtitle: "Talk with Amber, your AI coach",
+                title: "Start Roleplay",
+                subtitle: "Practice Delivering Feedback",
                 icon: `https://unpkg.com/lucide-static@0.321.0/icons/message-circle.svg`,
             },
             loading: {
-                color: `rgb(93, 124, 202)`,
+                color: `rgb(255, 157, 0)`,
                 type: "pill",
-                title: "Connecting...",
+                title: "Connecting you to Joe...",
                 subtitle: "Please wait",
                 icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
             },
             active: {
                 color: `rgb(255, 0, 0)`,
                 type: "pill",
-                title: "Coaching in progress",
+                title: "Roleplay in progress",
                 subtitle: "Click to end session",
                 icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
             },
@@ -120,6 +165,7 @@
                     apiKey: apiKey,
                     assistant: assistant,
                     config: buttonConfig,
+                    renderElement: document.getElementById('vapi-button')
                 });
             };
         })(document, "script");
