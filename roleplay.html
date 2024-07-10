@@ -38,22 +38,18 @@
         .logo img {
             max-width: 200px;
         }
-        .intro-instructions {
-            background-color: #e6f7ff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            border: 2px solid #91d5ff;
-        }
-        .scenario {
+        .intro-instructions, .how-to, .scenario {
             background-color: white;
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-        .intro-instructions h2, .scenario h2 {
+        .intro-instructions {
+            background-color: #e6f7ff;
+            border: 2px solid #91d5ff;
+        }
+        .intro-instructions h2, .how-to h2, .scenario h2 {
             margin-top: 0;
             color: #FF6B00;
         }
@@ -65,11 +61,11 @@
             content: '👋';
             margin-right: 10px;
         }
-        .intro-instructions ol, .scenario ul {
+        .intro-instructions ol, .how-to ol, .scenario ul {
             padding-left: 20px;
             margin-bottom: 0;
         }
-        .intro-instructions li, .scenario li {
+        .intro-instructions li, .how-to li, .scenario li {
             margin-bottom: 10px;
         }
         #vapi-button {
@@ -77,6 +73,10 @@
             justify-content: center;
             margin-top: auto;
             padding: 20px 0;
+        }
+        .contact-info {
+            font-style: italic;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -90,16 +90,20 @@
             <div class="intro-instructions">
                 <h2>Welcome to Our Prototype Test!</h2>
                 <p>Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept.</p>
+                <p class="contact-info">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
                 <p><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
-                <h3>How to Complete This Task:</h3>
+            </div>
+
+            <div class="how-to">
+                <h2>How to Complete This Task:</h2>
                 <ol>
                     <li>Read the scenario details below.</li>
                     <li>Click the "Start Roleplay" button at the bottom of the page to begin the conversation. You may need to grant microphone access.</li>
                     <li>The prototype is hosted on our CTO Jamie's GitHub (Microsoft's Developer platform), which is the microphone access request you'll receive when you start the Roleplay.</li>
-                    <li>The AI will say "Hey There" to start the conversation - you should then reply using your voice and simulate the conversation based on the topic of the Roleplay scenario below.
+                    <li>The AI will say "Hey There" to start the conversation - you should then reply using your voice and simulate the conversation based on the topic of the Roleplay scenario below.</li>
                     <li>Practice the scenario by interacting with the AI.</li>
                     <li>When finished, end the conversation.</li>
-                    <li>Return to the Google Form to provide your feedback.</li>
+                    <li>Go to the <a href="https://forms.gle/vZV5y3XgoKVnyiF29">Google Form</a> to provide your feedback.</li>
                 </ol>
                 <p>We appreciate your time and input. Let's get started!</p>
             </div>
