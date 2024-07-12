@@ -3,125 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambr Roleplay Demo - Difficult Performance Conversation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            flex-direction: column;
+    <title>Ambr - Roleplay Prototype: Difficult Performance Conversation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ambr-orange': '#E65C00',
+                        'ambr-light': '#FFF0E6',
+                        'ambr-dark': '#993D00',
+                    }
+                }
+            }
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-        }
-        .content {
-            width: 100%;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .logo {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .logo img {
-            max-width: 200px;
-        }
-        .intro-instructions, .how-to, .scenario {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .intro-instructions {
-            background-color: #e6f7ff;
-            border: 2px solid #91d5ff;
-        }
-        .intro-instructions h2, .how-to h2, .scenario h2 {
-            margin-top: 0;
-            color: #FF6B00;
-        }
-        .intro-instructions h2 {
-            display: flex;
-            align-items: center;
-        }
-        .intro-instructions h2::before {
-            content: '👋';
-            margin-right: 10px;
-        }
-        .intro-instructions ol, .how-to ol, .scenario ul {
-            padding-left: 20px;
-            margin-bottom: 0;
-        }
-        .intro-instructions li, .how-to li, .scenario li {
-            margin-bottom: 10px;
-        }
-        #vapi-button {
-            display: flex;
-            justify-content: center;
-            margin-top: auto;
-            padding: 20px 0;
-        }
-        .contact-info {
-            font-style: italic;
-            margin-top: 15px;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="content">
-            <div class="logo">
-                <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
+<body class="bg-gray-100 font-sans">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <a href="#" class="flex items-center py-4 px-2">
+                        <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo" class="h-8 w-auto mr-2">
+                    </a>
+                </div>
             </div>
-            
-            <div class="intro-instructions">
-                <h2>Welcome to Our Prototype Test!</h2>
-                <p>Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept.</p>
-                <p class="contact-info">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
-                <p><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
-            </div>
+        </div>
+    </nav>
 
-            <div class="how-to">
-                <h2>How to Complete This Task:</h2>
-                <ol>
-                    <li>Read the scenario details below.</li>
-                    <li>Click the "Start Roleplay" button at the bottom of the page to begin the conversation. You may need to grant microphone access.</li>
-                    <li>The prototype is hosted on our CTO Jamie's GitHub (Microsoft's Developer platform), which is the microphone access request you'll receive when you start the Roleplay.</li>
-                    <li>The AI will say "Hey There" to start the conversation - you should then reply using your voice and simulate the conversation based on the topic of the Roleplay scenario below.</li>
-                    <li>Practice the scenario by interacting with the AI.</li>
-                    <li>When finished, end the conversation.</li>
-                    <li>Go to the <a href="https://forms.gle/vZV5y3XgoKVnyiF29">Google Form</a> to provide your feedback.</li>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold mb-2 text-gray-800">Welcome to Our Prototype Test!</h1>
+            <p class="text-xl text-gray-600">Practice a Difficult Performance Conversation</p>
+        </header>
+
+        <div id="step1" class="mb-8">
+            <div class="bg-ambr-light border-l-4 border-ambr-orange p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-ambr-dark">Important Instructions</h2>
+                <p class="mb-4">Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept. This is a very early prototype to test the concept of Voice AI in this setting rather than a fully built out product, so keep this in mind.</p>
+                <p class="mb-4"><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
+                <p class="italic">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
+            </div>
+            <button onclick="showStep(2)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: How to Complete This Task</button>
+        </div>
+
+        <div id="step2" class="hidden mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">How to Complete This Task:</h2>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Read the scenario details on the next page carefully.</li>
+                    <li>Click the "Start Roleplay" button to begin the conversation.</li>
+                    <li>Grant microphone access when prompted. The prototype is hosted on our CTO Jamie's GitHub, which is why you'll see this request.</li>
+                    <li>The AI will initiate the conversation with "Hey There". Respond using your voice, simulating the conversation based on the scenario.</li>
+                    <li>Engage in the roleplay, practicing the difficult conversation as outlined in the scenario.</li>
+                    <li>When you feel the conversation has reached its natural conclusion, end the roleplay.</li>
+                    <li>After completing the roleplay, you'll find a feedback form on the final page.</li>
                 </ol>
-                <p>We appreciate your time and input. Let's get started!</p>
             </div>
+            <div class="flex justify-between">
+                <button onclick="showStep(1)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
+                <button onclick="showStep(3)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: Scenario Details</button>
+            </div>
+        </div>
 
-            <div class="scenario">
-                <h2>Roleplay Scenario: Difficult Conversations</h2>
-                <ul>
+        <div id="step3" class="hidden mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Roleplay Scenario: Difficult Performance Conversation</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
                     <li>You are a manager who has set up a meeting with your direct report, Joe.</li>
                     <li>Joe has been struggling with time management and meeting deadlines.</li>
                     <li>Your goal is to use the meeting to provide constructive feedback and discuss ways to improve performance.</li>
                 </ul>
+                <div class="bg-ambr-light p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-ambr-dark">Key Points to Remember:</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Be specific and use concrete examples</li>
+                        <li>Focus on behaviors and outcomes, not personal characteristics</li>
+                        <li>Listen actively and encourage a two-way dialogue</li>
+                        <li>Collaborate on setting clear, actionable goals for improvement</li>
+                        <li>Express confidence in the employee's ability to improve</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex justify-between items-center">
+                <button onclick="showStep(2)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
+                <button onclick="showStep(4)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: Start Roleplay</button>
             </div>
         </div>
 
-        <div id="vapi-button"></div>
+        <div id="step4" class="hidden mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Start Your Roleplay</h2>
+                <p class="text-gray-700 mb-4">You're now ready to begin your roleplay. Click the "Start Roleplay" button below to initiate the conversation with Joe. Remember the key points and approach the conversation as you would in a real-world scenario.</p>
+                <div class="flex justify-center mb-6">
+                    <div id="vapi-button"></div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Provide Feedback</h2>
+                <p class="text-gray-700 mb-4">After completing your roleplay, please take a moment to provide feedback on your experience. Your insights are crucial for improving Ambr.</p>
+                <div class="flex justify-center">
+                    <a href="https://forms.gle/vZV5y3XgoKVnyiF29" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Open Feedback Form</a>
+                </div>
+            </div>
+            <button onclick="showStep(3)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
+        </div>
+
+        <div class="bg-gray-200 p-4 rounded-lg text-center mt-8">
+            <p class="text-gray-700">Remember: This is a safe space to practice. Take your time, and don't hesitate to try different approaches.</p>
+        </div>
     </div>
 
     <script>
+        function showStep(step) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.add('hidden');
+            document.getElementById('step' + step).classList.remove('hidden');
+        }
+
         var vapiInstance = null;
         const assistant = "e917efb3-79a7-4c89-a8c1-d283ace25072";
         const apiKey = "1c16ffea-c397-4479-b065-df8d9f3c0a89";
@@ -129,7 +132,7 @@
             width: "200px",
             height: "50px",
             idle: {
-                color: `rgb(255, 107, 0)`,
+                color: `rgb(230, 92, 0)`,
                 type: "pill",
                 title: "Start Roleplay",
                 subtitle: "Practice Delivering Feedback",
@@ -143,7 +146,7 @@
                 icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
             },
             active: {
-                color: `rgb(255, 0, 0)`,
+                color: `rgb(153, 61, 0)`,
                 type: "pill",
                 title: "Roleplay in progress",
                 subtitle: "Click to end session",
