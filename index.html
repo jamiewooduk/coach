@@ -5,173 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambr - Roleplay Prototype: Difficult Performance Conversation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ambr-orange': '#E65C00',
-                        'ambr-light': '#FFF0E6',
-                        'ambr-dark': '#993D00',
-                    }
-                }
-            }
-        }
-    </script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .step { display: none; }
+        .step.active { display: block; }
+        .btn { background-color: #E65C00; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background-color: #993D00; }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <a href="#" class="flex items-center py-4 px-2">
-                        <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo" class="h-8 w-auto mr-2">
-                    </a>
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg p-4">
+        <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo" class="h-8">
     </nav>
 
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
-        <header class="mb-8 text-center">
-            <h1 class="text-3xl font-bold mb-2 text-gray-800">Welcome to Our Prototype Test!</h1>
-            <p class="text-xl text-gray-600">Practice a Difficult Performance Conversation</p>
-        </header>
+    <div class="container">
+        <h1 class="text-3xl font-bold mb-4 text-center">Welcome to Our Prototype Test!</h1>
+        <p class="text-xl text-gray-600 mb-8 text-center">Practice a Difficult Performance Conversation</p>
 
-        <div id="step1" class="mb-8">
-            <div class="bg-ambr-light border-l-4 border-ambr-orange p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-ambr-dark">Important Instructions</h2>
-                <p class="mb-4">Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept. This is a very early prototype to test the concept of Voice AI in this setting rather than a fully built out product, so keep this in mind.</p>
-                <p class="mb-4"><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
-                <p class="italic">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
-            </div>
-            <button onclick="showStep(2)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: How to Complete This Task</button>
+        <div id="step1" class="step active">
+            <h2 class="text-2xl font-semibold mb-4">Important Instructions</h2>
+            <p>Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept.</p>
+            <p><strong>Please note:</strong> Your interactions are completely confidential.</p>
+            <button onclick="nextStep()" class="btn mt-4">Next</button>
         </div>
 
-        <div id="step2" class="hidden mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-800">How to Complete This Task:</h2>
-                <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                    <li>Read the scenario details on the next page carefully.</li>
-                    <li>Click the "Start Roleplay" button to begin the conversation.</li>
-                    <li>Grant microphone access when prompted. The prototype is hosted on our CTO Jamie's GitHub, which is why you'll see this request.</li>
-                    <li>The AI will initiate the conversation with "Hey There". Respond using your voice, simulating the conversation based on the scenario.</li>
-                    <li>Engage in the roleplay, practicing the difficult conversation as outlined in the scenario.</li>
-                    <li>When you feel the conversation has reached its natural conclusion, end the roleplay.</li>
-                    <li>After completing the roleplay, you'll find a feedback form on the final page.</li>
-                </ol>
-            </div>
-            <div class="flex justify-between">
-                <button onclick="showStep(1)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
-                <button onclick="showStep(3)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: Scenario Details</button>
-            </div>
+        <div id="step2" class="step">
+            <h2 class="text-2xl font-semibold mb-4">How to Complete This Task</h2>
+            <ol class="list-decimal list-inside">
+                <li>Read the scenario details carefully.</li>
+                <li>Click the "Start Roleplay" button to begin the conversation.</li>
+                <li>Respond using your voice, simulating the conversation based on the scenario.</li>
+                <li>When finished, end the conversation and provide feedback.</li>
+            </ol>
+            <button onclick="prevStep()" class="btn mt-4">Previous</button>
+            <button onclick="nextStep()" class="btn mt-4 ml-4">Next</button>
         </div>
 
-        <div id="step3" class="hidden mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Roleplay Scenario: Difficult Performance Conversation</h2>
-                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                    <li>You are a manager who has set up a meeting with your direct report, Joe.</li>
-                    <li>Joe has been struggling with time management and meeting deadlines.</li>
-                    <li>Your goal is to use the meeting to provide constructive feedback and discuss ways to improve performance.</li>
-                </ul>
-                <div class="bg-ambr-light p-4 rounded-lg">
-                    <h3 class="text-xl font-semibold mb-2 text-ambr-dark">Key Points to Remember:</h3>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li>Be specific and use concrete examples</li>
-                        <li>Focus on behaviors and outcomes, not personal characteristics</li>
-                        <li>Listen actively and encourage a two-way dialogue</li>
-                        <li>Collaborate on setting clear, actionable goals for improvement</li>
-                        <li>Express confidence in the employee's ability to improve</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="flex justify-between items-center">
-                <button onclick="showStep(2)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
-                <button onclick="showStep(4)" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Next: Start Roleplay</button>
-            </div>
+        <div id="step3" class="step">
+            <h2 class="text-2xl font-semibold mb-4">Roleplay Scenario</h2>
+            <p>You are a manager meeting with Joe, who has been missing deadlines. Your goal is to provide constructive feedback and discuss ways to improve performance.</p>
+            <h3 class="text-xl font-semibold mt-4 mb-2">Key Points to Remember:</h3>
+            <ul class="list-disc list-inside">
+                <li>Be specific and use concrete examples</li>
+                <li>Focus on behaviors and outcomes</li>
+                <li>Listen actively and encourage dialogue</li>
+                <li>Set clear, actionable goals for improvement</li>
+            </ul>
+            <button onclick="prevStep()" class="btn mt-4">Previous</button>
+            <button onclick="nextStep()" class="btn mt-4 ml-4">Start Roleplay</button>
         </div>
 
-        <div id="step4" class="hidden mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Start Your Roleplay</h2>
-                <p class="text-gray-700 mb-4">You're now ready to begin your roleplay. Click the "Start Roleplay" button below to initiate the conversation with Joe. Remember the key points and approach the conversation as you would in a real-world scenario.</p>
-                <div class="flex justify-center mb-6">
-                    <div id="vapi-button"></div>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Provide Feedback</h2>
-                <p class="text-gray-700 mb-4">After completing your roleplay, please take a moment to provide feedback on your experience. Your insights are crucial for improving Ambr.</p>
-                <div class="flex justify-center">
-                    <a href="https://forms.gle/vZV5y3XgoKVnyiF29" class="bg-ambr-orange text-white px-6 py-2 rounded-lg hover:bg-ambr-dark transition duration-300">Open Feedback Form</a>
-                </div>
-            </div>
-            <button onclick="showStep(3)" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400 transition duration-300">Previous</button>
+        <div id="step4" class="step">
+            <h2 class="text-2xl font-semibold mb-4">Start Your Roleplay</h2>
+            <div id="vapi-container" class="my-4"></div>
+            <h2 class="text-2xl font-semibold mt-8 mb-4">Provide Feedback</h2>
+            <p>After completing your roleplay, please provide feedback on your experience.</p>
+            <a href="https://forms.gle/vZV5y3XgoKVnyiF29" class="btn inline-block mt-4">Open Feedback Form</a>
+            <button onclick="prevStep()" class="btn mt-4 ml-4">Previous</button>
         </div>
 
         <div class="bg-gray-200 p-4 rounded-lg text-center mt-8">
-            <p class="text-gray-700">Remember: This is a safe space to practice. Take your time, and don't hesitate to try different approaches.</p>
+            <p>Remember: This is a safe space to practice. Take your time, and don't hesitate to try different approaches.</p>
         </div>
     </div>
 
     <script>
+        let currentStep = 1;
         function showStep(step) {
-            document.getElementById('step1').classList.add('hidden');
-            document.getElementById('step2').classList.add('hidden');
-            document.getElementById('step3').classList.add('hidden');
-            document.getElementById('step4').classList.add('hidden');
-            document.getElementById('step' + step).classList.remove('hidden');
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            if (step === 4 && !window.vapiInitialized) {
+                initializeVapi();
+            }
         }
-
-        var vapiInstance = null;
-        const assistant = "e917efb3-79a7-4c89-a8c1-d283ace25072";
-        const apiKey = "1c16ffea-c397-4479-b065-df8d9f3c0a89";
-        const buttonConfig = {
-            width: "200px",
-            height: "50px",
-            idle: {
-                color: `rgb(230, 92, 0)`,
-                type: "pill",
-                title: "Start Roleplay",
-                subtitle: "Practice Delivering Feedback",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/message-circle.svg`,
-            },
-            loading: {
-                color: `rgb(255, 157, 0)`,
-                type: "pill",
-                title: "Connecting you to Joe...",
-                subtitle: "Please wait",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
-            },
-            active: {
-                color: `rgb(153, 61, 0)`,
-                type: "pill",
-                title: "Roleplay in progress",
-                subtitle: "Click to end session",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
-            },
-        };
-
-        (function (d, t) {
-            var g = document.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.src =
-                "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
-            g.defer = true;
-            g.async = true;
-            s.parentNode.insertBefore(g, s);
-
-            g.onload = function () {
-                vapiInstance = window.vapiSDK.run({
-                    apiKey: apiKey,
-                    assistant: assistant,
-                    config: buttonConfig,
-                    renderElement: document.getElementById('vapi-button')
+        function nextStep() {
+            if (currentStep < 4) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+        function initializeVapi() {
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+            script.onload = function () {
+                window.vapiSDK.run({
+                    apiKey: "1c16ffea-c397-4479-b065-df8d9f3c0a89",
+                    assistant: "e917efb3-79a7-4c89-a8c1-d283ace25072",
+                    renderElement: document.getElementById('vapi-container')
                 });
+                window.vapiInitialized = true;
             };
-        })(document, "script");
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
