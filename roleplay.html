@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambr Roleplay Demo - Difficult Performance Conversation</title>
+    <title>Ambr - Manager Development Demo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -38,41 +38,41 @@
         .logo img {
             max-width: 200px;
         }
-        .intro-instructions, .how-to, .scenario {
+        .announcement, .demo-info {
             background-color: white;
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-        .intro-instructions {
+        .announcement {
             background-color: #e6f7ff;
             border: 2px solid #91d5ff;
         }
-        .intro-instructions h2, .how-to h2, .scenario h2 {
+        .announcement h2, .demo-info h2 {
             margin-top: 0;
             color: #FF6B00;
         }
-        .intro-instructions h2 {
+        .announcement h2 {
             display: flex;
             align-items: center;
         }
-        .intro-instructions h2::before {
-            content: '👋';
+        .announcement h2::before {
+            content: '🎉';
             margin-right: 10px;
         }
-        .intro-instructions ol, .how-to ol, .scenario ul {
-            padding-left: 20px;
-            margin-bottom: 0;
+        .demo-button {
+            display: inline-block;
+            background-color: #FF6B00;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        .intro-instructions li, .how-to li, .scenario li {
-            margin-bottom: 10px;
-        }
-        #vapi-button {
-            display: flex;
-            justify-content: center;
-            margin-top: auto;
-            padding: 20px 0;
+        .demo-button:hover {
+            background-color: #FF8C00;
         }
         .contact-info {
             font-style: italic;
@@ -87,88 +87,20 @@
                 <img src="https://unicorn-cdn.b-cdn.net/e9bd57de-a14a-4499-9320-bc46ae85f19b/ambrgradientlogo.png" alt="Ambr Logo">
             </div>
             
-            <div class="intro-instructions">
-                <h2>Welcome to Our Prototype Test!</h2>
-                <p>Thank you for testing our Manager Development prototype. Your feedback is invaluable in helping us improve this concept. This is a very early prototype to test the concept of Voice AI in this setting rather than a fully built out product, so keep this in mind.</p>
-                <p class="contact-info">If you have any questions about this prototype, don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
-                <p><strong>Please note:</strong> Your interactions are completely confidential. No one from Ambr will see or hear your conversation.</p>
+            <div class="announcement">
+                <h2>Prototype Testing Completed</h2>
+                <p>Thank you for your interest in our Manager Development prototype. We're excited to announce that the prototype testing phase has concluded.</p>
+                <p>Your feedback has been invaluable in helping us improve our concept and develop a more robust solution.</p>
             </div>
 
-            <div class="how-to">
-                <h2>How to Complete This Task:</h2>
-                <ol>
-                    <li>Read the scenario details below.</li>
-                    <li>Click the "Start Roleplay" button at the bottom of the page to begin the conversation. You may need to grant microphone access.</li>
-                    <li>The prototype is hosted on our CTO Jamie's GitHub (Microsoft's Developer platform), which is the microphone access request you'll receive when you start the Roleplay.</li>
-                    <li>The AI will say "Hey There" to start the conversation - you should then reply using your voice and simulate the conversation based on the topic of the Roleplay scenario below.</li>
-                    <li>Practice the scenario by interacting with the AI.</li>
-                    <li>When finished, end the conversation.</li>
-                    <li>Go to the <a href="https://forms.gle/vZV5y3XgoKVnyiF29">Google Form</a> to provide your feedback.</li>
-                </ol>
-                <p>We appreciate your time and input. Let's get started!</p>
-            </div>
-
-            <div class="scenario">
-                <h2>Roleplay Scenario: Difficult Conversations</h2>
-                <ul>
-                    <li>You are a manager who has set up a meeting with your direct report, Joe.</li>
-                    <li>Joe has been struggling with time management and meeting deadlines.</li>
-                    <li>Your goal is to use the meeting to provide constructive feedback and discuss ways to improve performance.</li>
-                </ul>
+            <div class="demo-info">
+                <h2>Try Our New Demo</h2>
+                <p>We're thrilled to share that a demo of our product is now available! Experience the latest version of our Manager Development tool and see how it can enhance your leadership skills.</p>
+                <p>Click the button below to access the demo:</p>
+                <a href="https://simulead.ambr.company" class="demo-button">Launch Demo</a>
+                <p class="contact-info">If you have any questions about the demo or our product, please don't hesitate to reach out to steph@ambr.company or jamie@ambr.company</p>
             </div>
         </div>
-
-        <div id="vapi-button"></div>
     </div>
-
-    <script>
-        var vapiInstance = null;
-        const assistant = "e917efb3-79a7-4c89-a8c1-d283ace25072";
-        const apiKey = "1c16ffea-c397-4479-b065-df8d9f3c0a89";
-        const buttonConfig = {
-            width: "200px",
-            height: "50px",
-            idle: {
-                color: `rgb(255, 107, 0)`,
-                type: "pill",
-                title: "Start Roleplay",
-                subtitle: "Practice Delivering Feedback",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/message-circle.svg`,
-            },
-            loading: {
-                color: `rgb(255, 157, 0)`,
-                type: "pill",
-                title: "Connecting you to Joe...",
-                subtitle: "Please wait",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
-            },
-            active: {
-                color: `rgb(255, 0, 0)`,
-                type: "pill",
-                title: "Roleplay in progress",
-                subtitle: "Click to end session",
-                icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
-            },
-        };
-
-        (function (d, t) {
-            var g = document.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.src =
-                "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
-            g.defer = true;
-            g.async = true;
-            s.parentNode.insertBefore(g, s);
-
-            g.onload = function () {
-                vapiInstance = window.vapiSDK.run({
-                    apiKey: apiKey,
-                    assistant: assistant,
-                    config: buttonConfig,
-                    renderElement: document.getElementById('vapi-button')
-                });
-            };
-        })(document, "script");
-    </script>
 </body>
 </html>
